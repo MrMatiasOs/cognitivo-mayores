@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Completa el refrán — Juegos Cognitivos</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="./styles.css?v=2"/>
 </head>
 <body>
   <main class="wrap" role="main" aria-labelledby="titulo">
@@ -32,9 +32,7 @@
       </section>
     </header>
 
-    <section id="juego" class="juego" aria-live="polite">
-      <!-- Aquí se renderiza la pregunta -->
-    </section>
+    <section id="juego" class="juego" aria-live="polite"></section>
 
     <section id="estado" class="estado" aria-live="polite">
       <p>Progreso: <span id="progreso">0/0</span> · Aciertos: <span id="aciertos">0</span></p>
@@ -51,6 +49,8 @@
       </details>
     </footer>
   </main>
-  <script src="app.js"></script>
+
+  <!-- Importante: rutas relativas y 'defer' -->
+  <script src="./app.js?v=2" defer></script>
 </body>
 </html>
