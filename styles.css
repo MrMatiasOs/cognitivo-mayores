@@ -1,10 +1,48 @@
-body {
-  font-family: system-ui, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-  padding: 2rem;
+:root{
+  --bg:#0b0b0b; --fg:#f5f5f5; --accent:#ffd54a; --accent2:#7fd1b9; --card:#171717;
+  --ok:#7fd1b9; --bad:#ff7a7a; --focus:3px solid var(--accent);
+  font-size: 18px; /* base grande */
 }
-h1 {
-  font-size: 2rem;
-  color: #ffd54a;
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--fg); font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+.wrap{max-width:960px;margin:0 auto;padding:1rem}
+.header h1{font-size:2rem;margin:.5rem 0}
+.intro{line-height:1.6;margin:0 0 1rem}
+.controles{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+label{opacity:.9}
+select{background:var(--card);color:var(--fg);border:1px solid #333;padding:.5rem;border-radius:.6rem}
+.btn{border:0;border-radius:.8rem;cursor:pointer;font-weight:700;padding:.7rem 1rem}
+.btn.principal{background:var(--accent);color:#000}
+.btn.secundario{background:var(--accent2);color:#000}
+.btn:focus-visible{outline:var(--focus)}
+
+.juego{display:grid;gap:1rem}
+.tarjeta{background:var(--card);border:1px solid #2a2a2a;border-radius:1rem;padding:1rem}
+.pregunta{font-size:1.4rem;margin:0 0 .5rem}
+.opciones{display:grid;gap:.6rem}
+.opciones button{
+  text-align:left;background:#222;color:var(--fg);border:2px solid #333;border-radius:.8rem;
+  padding:1rem;font-size:1.1rem;line-height:1.3;cursor:pointer;
+}
+.opciones button:focus-visible{outline:var(--focus)}
+.opciones button[data-correcta="true"].marcada{border-color:var(--ok);box-shadow:0 0 0 2px #000,inset 0 0 0 2px var(--ok)}
+.opciones button[data-correcta="false"].marcada{border-color:var(--bad);box-shadow:0 0 0 2px #000,inset 0 0 0 2px var(--bad)}
+.feedback{font-size:1rem;margin:.5rem 0 0}
+.feedback.ok{color:var(--ok)}
+.feedback.bad{color:var(--bad)}
+.acciones{margin-top:.8rem}
+.progresoBar{height:10px;background:#333;border-radius:999px;overflow:hidden;margin:.6rem 0}
+.progresoBar > div{height:100%;background:var(--accent);width:0%}
+
+.estado{margin-top:1rem}
+.estado p{margin:.2rem 0}
+
+.ayuda details{margin-top:1rem}
+.ayuda summary{cursor:pointer}
+
+.muy-grande{font-size: 21px;}
+
+@media (min-width: 720px){
+  .pregunta{font-size:1.6rem}
+  .opciones button{font-size:1.15rem}
 }

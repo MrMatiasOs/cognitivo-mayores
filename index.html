@@ -1,17 +1,56 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Entrenamiento de Memoria</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Completa el refrán — Juegos Cognitivos</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <main>
-    <h1>Memoria para Adultos Mayores</h1>
-    <p>¡Hola! Este es tu primer sitio con GitHub Pages 🚀</p>
-    <div id="app"></div>
-    <script src="app.js"></script>
+  <main class="wrap" role="main" aria-labelledby="titulo">
+    <header class="header">
+      <h1 id="titulo">Completa el refrán</h1>
+      <p class="intro">
+        Elige la segunda parte correcta del refrán. Sin límite de tiempo. Tipografía grande y alto contraste.
+      </p>
+      <section class="controles">
+        <label for="rondas">Rondas:</label>
+        <select id="rondas" aria-label="Elegir número de rondas">
+          <option value="6">6 (corto)</option>
+          <option value="8" selected>8 (recomendado)</option>
+          <option value="10">10 (completo)</option>
+        </select>
+
+        <label for="tamano">Tamaño de texto:</label>
+        <select id="tamano" aria-label="Elegir tamaño de texto">
+          <option value="grande" selected>Grande</option>
+          <option value="muy-grande">Muy grande</option>
+        </select>
+
+        <button id="btnComenzar" class="btn principal">Comenzar</button>
+        <button id="btnReiniciar" class="btn secundario" hidden>Volver a jugar</button>
+      </section>
+    </header>
+
+    <section id="juego" class="juego" aria-live="polite">
+      <!-- Aquí se renderiza la pregunta -->
+    </section>
+
+    <section id="estado" class="estado" aria-live="polite">
+      <p>Progreso: <span id="progreso">0/0</span> · Aciertos: <span id="aciertos">0</span></p>
+    </section>
+
+    <footer class="ayuda">
+      <details>
+        <summary>Consejos</summary>
+        <ul>
+          <li>Puedes usar <strong>1, 2, 3</strong> para elegir una opción con el teclado.</li>
+          <li>No hay límite de tiempo. Lee con calma y disfruta.</li>
+          <li>Al terminar verás tu resultado y podrás volver a jugar.</li>
+        </ul>
+      </details>
+    </footer>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>
